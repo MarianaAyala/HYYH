@@ -1,0 +1,34 @@
+var int A;
+var int B;
+var dec C;
+
+funct letrero{
+    while (C<12 and A==10){
+    display ["Esperando..."];
+    let C = C - 3;
+    if (C==11)
+    {
+        let A =10;
+    };
+    };
+};
+
+main
+{
+  let A = 0;
+  let B = 0;
+  let C = 5;
+
+#El error sintáctico es tratar de declarar una variable después del lugar asignado
+
+  for (A<C; A+2){
+    if (B<20){
+        let B = A*5;
+        let A = A -1;
+        display ["Aún no se cumple el ciclo"];
+    };
+
+    let C = 20;
+  };
+    execute letrero;
+};

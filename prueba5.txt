@@ -1,0 +1,25 @@
+var int a;
+var int b;
+var int x;
+var int y;
+var int z;
+
+main
+{
+for (x<10; x+2)
+{
+    let a = a*5;
+    for (a<100; b+1)
+    {
+        let z = y +2;
+        let y = 50/z;
+
+        for ( y < 10 ; z +1)
+        {
+            let b = 13 * 18 + (a/3);
+        };
+    };
+let x = a +b*(x+y);
+};
+
+};

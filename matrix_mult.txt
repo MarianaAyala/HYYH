@@ -1,0 +1,82 @@
+array int mat1[3][2];
+array int mat2[2][3];
+array int matr[3][3];
+
+var int aux_mat1;
+var int aux_mat2;
+var int aux_prod;
+var int aux_acum;
+var int aux_input;
+
+var int filas;
+var int columnas;
+var int aux_filasB;
+
+var int aux_index_filas;
+var int aux_index_col;
+
+main
+{
+
+    display["**Matriz 1**"];
+    for (filas<3; filas+1)
+    {
+        let aux_index_filas = filas-1;
+        let columnas = 0;
+        for(columnas<2; columnas+1)
+        {
+            let aux_index_col = columnas-1;
+            enter [aux_input];
+            let mat1[aux_index_filas][aux_index_col] = aux_input;
+        };
+    };
+
+    let filas = 0;
+    display["**Matriz 2**"];
+
+    for (filas<2; filas+1)
+    {
+        let aux_index_filas = filas-1;
+        let columnas = 0;
+        for(columnas<3; columnas+1)
+        {
+            let aux_index_col = columnas-1;
+            enter [aux_input];
+            let mat2[aux_index_filas][aux_index_col] = aux_input;
+        };
+    };
+
+    let filas = 0;
+
+    display["**RESULTADO**"];
+
+    for (filas<3; filas+1)
+    {
+        let aux_index_filas = filas-1;
+        let columnas = 0;
+
+        for(columnas<3; columnas+1)
+        {
+            let aux_acum=0;
+            let aux_filasB = 2;
+            let aux_index_col = columnas-1;
+
+            for(aux_filasB>0; aux_filasB-1)
+            {
+                let aux_mat1 = mat1[aux_index_filas][aux_filasB];
+                let aux_mat2 = mat2[aux_filasB][aux_index_col];
+                let aux_prod = aux_mat1*aux_mat2;
+                let aux_acum = aux_acum+aux_prod;
+
+            };
+
+            display ["Fila: ", aux_index_filas];
+            display ["Columna: ", aux_index_col];
+            display ["Prod: ", aux_acum];
+            let matr[aux_index_filas][aux_index_col] = aux_acum;
+            display [" "];
+        };
+    };
+
+    display["**FIN**"];
+};

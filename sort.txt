@@ -1,0 +1,29 @@
+array int var1[4];
+var int aux_input;
+var int aux_output;
+var int filas;
+var int aux_filas;
+
+main
+{
+
+    display["**Matriz 1**"];
+
+    for(filas<4; filas+1)
+    {
+        let aux_filas = filas-1;
+        enter [aux_input];
+        let var1[aux_filas]= aux_input;
+    };
+
+    let filas=4;
+
+    display ["SORT"];
+     for(filas>0; filas-1)
+    {
+        display["Fila: ", filas];
+        let aux_ouput = var1[filas];
+        display["Valor: ", aux_output];
+    };
+
+};

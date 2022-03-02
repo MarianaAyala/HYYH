@@ -1,0 +1,20 @@
+var int a;
+var dec b;
+var int c;
+var dec p;
+
+main
+{
+    enter[a];
+    let c = a;
+    while(c > 10){
+    let c = c- 10;
+    };
+    let b=a/10;
+    while(b > 1){
+    let b=b-1;
+    };
+
+
+   # let c = a/10;
+};

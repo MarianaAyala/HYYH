@@ -1,0 +1,52 @@
+var int i;
+var int j;
+var int fila_final;
+var int columna_final;
+var int acumulado;
+array int arr1[3][3];
+array int arr2[3][3];
+array int arr3[3][3];
+
+main
+{
+    let i = 0;
+    let j = 0;
+    for (i<3; i+1) {
+        for (j<3; j+1){
+            display ["Enter the value for the array: "];
+            enter [arr1[i][j]];
+        };
+    };
+
+    let i = 0;
+    let j = 0;
+
+    for (i<3; i+1){
+        for (j<3; j+1){
+            display ["Enter the value for the array: "];
+            enter [arr2[i][j]];
+        };
+    };
+
+    let i = 0;
+    let j = 0;
+    let fila_final = 0;
+    let columna_final = 0;
+    let acumulado = 0;
+
+    for (i<3; i+1)
+    {
+        for (j<3; j+1) {
+            let acumulado = acumulado + (arr1[i][j] * arr2[i][j]);
+        };
+        let j = 0;
+        let arr3[i][columna_final] = acumulado;
+        if (columna_final == 2) {
+            let columna_final = 0;
+        };
+        else {
+            let columna_final = columna_final + 1;
+        };
+    };
+
+};

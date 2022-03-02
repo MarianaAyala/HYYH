@@ -1,0 +1,29 @@
+var int a;
+var int b;
+var int x;
+var int y;
+var int z;
+
+main
+{
+
+while (x<y)
+{
+    if (a>b)
+    {
+        while (x>a)
+        {
+            let y = 3;
+            let z = 4;
+        };
+    };
+    else
+    {
+        while (y<b)
+        {
+            let y = y +1;
+        };
+    };
+};
+
+};

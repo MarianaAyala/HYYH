@@ -1,0 +1,30 @@
+var int a;
+var int b;
+var int c;
+var dec p;
+
+main
+{
+
+    let c = 13;
+
+    display ["Hola2"];
+        do {
+        display["hi2"];
+        break;
+        display ["Hola3"];
+        break;
+    };
+
+    let a =if (c ==12){
+    5;
+    };
+
+    let b =if (c ==13){
+    5;
+    };
+
+    display["valor A: ", a];
+    display["valor B: ", b];
+
+ };

@@ -1,0 +1,3023 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    EXECUTE
+
+Grammar
+
+Rule 0     S' -> prog
+Rule 1     prog -> v f MAIN CBIZQ st CBDER PUNTOCOMA
+Rule 2     prog -> v MAIN CBIZQ st CBDER PUNTOCOMA
+Rule 3     v -> v VAR tipo ID PUNTOCOMA
+Rule 4     v -> v ARRAY tipo ID SBIZQ CTE SBDER PUNTOCOMA
+Rule 5     v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+Rule 6     v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+Rule 7     v -> <empty>
+Rule 8     tipo -> INT
+Rule 9     tipo -> DEC
+Rule 10    f -> FUNCT ID CBIZQ st CBDER PUNTOCOMA f
+Rule 11    f -> <empty>
+Rule 12    st -> st LET variable IGUAL e PUNTOCOMA
+Rule 13    st -> st ENTER SBIZQ variable SBDER PUNTOCOMA
+Rule 14    st -> st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+Rule 15    st -> st DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+Rule 16    st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+Rule 17    st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+Rule 18    st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+Rule 19    st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+Rule 20    st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+Rule 21    st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+Rule 22    st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+Rule 23    st -> st BREAK auxFauxLoop PUNTOCOMA
+Rule 24    st -> <empty>
+Rule 25    ifAux -> <empty>
+Rule 26    ifAuxElse -> <empty>
+Rule 27    ifEndAux -> <empty>
+Rule 28    ifEndAuxEsp -> <empty>
+Rule 29    auxIniWhile -> <empty>
+Rule 30    auxFauxWhile -> <empty>
+Rule 31    auxFinWhile -> <empty>
+Rule 32    auxIniFor -> <empty>
+Rule 33    auxFauxFor -> <empty>
+Rule 34    auxFinFor -> <empty>
+Rule 35    auxAssignFor -> <empty>
+Rule 36    auxIniLoop -> <empty>
+Rule 37    auxFauxLoop -> <empty>
+Rule 38    auxFinLoop -> <empty>
+Rule 39    variable -> ID
+Rule 40    variable -> ID SBIZQ CTE SBDER
+Rule 41    variable -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+Rule 42    variable -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+Rule 43    variable -> ID SBIZQ ID SBDER
+Rule 44    variable -> ID SBIZQ ID SBDER SBIZQ ID SBDER
+Rule 45    variable -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+Rule 46    cond -> oprel
+Rule 47    cond -> cond AND oprel
+Rule 48    cond -> cond OR oprel
+Rule 49    oprel -> operador IGUALIGUAL operador
+Rule 50    oprel -> operador DIFERENTE operador
+Rule 51    oprel -> operador MAYOR operador
+Rule 52    oprel -> operador MENOR operador
+Rule 53    oprel -> operador MAYORQUE operador
+Rule 54    oprel -> operador MENORQUE operador
+Rule 55    oprel -> PARIZQ oprel PARDER
+Rule 56    oprel -> NOT PARIZQ oprel PARDER
+Rule 57    e -> e PLUS t
+Rule 58    e -> e MENOS t
+Rule 59    e -> t
+Rule 60    t -> t MULT m
+Rule 61    t -> t DIV m
+Rule 62    t -> m
+Rule 63    m -> PARIZQ e PARDER
+Rule 64    m -> operador
+Rule 65    operador -> CTE
+Rule 66    operador -> FLOAT
+Rule 67    operador -> ID
+Rule 68    operador -> ID SBIZQ CTE SBDER
+Rule 69    operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+Rule 70    operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+Rule 71    operador -> ID SBIZQ ID SBDER
+Rule 72    operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER
+Rule 73    operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+Terminals, with rules where they appear
+
+AND                  : 47
+ARRAY                : 4 5 6
+BREAK                : 23
+CBDER                : 1 2 10 16 17 17 18 19 20 21 22 22
+CBIZQ                : 1 2 10 16 17 17 18 19 20 21 22 22
+COMA                 : 14
+CTE                  : 4 5 5 6 6 6 21 22 22 40 41 41 42 42 42 65 68 69 69 70 70 70
+DEC                  : 9
+DIFERENTE            : 50
+DISPLAY              : 14 15
+DIV                  : 61
+DO                   : 20
+ELSE                 : 17 22
+ENTER                : 13
+EXECUTE              : 
+FLOAT                : 66
+FOR                  : 19
+FUNCT                : 10
+ID                   : 3 4 5 6 10 39 40 41 42 43 43 44 44 44 45 45 45 45 67 68 69 70 71 71 72 72 72 73 73 73 73
+IF                   : 16 17 21 22
+IGUAL                : 12 21 22
+IGUALIGUAL           : 49
+INT                  : 8
+LET                  : 12 21 22
+MAIN                 : 1 2
+MAYOR                : 51
+MAYORQUE             : 53
+MENOR                : 52
+MENORQUE             : 54
+MENOS                : 58
+MSG                  : 14 15
+MULT                 : 60
+NOT                  : 56
+OR                   : 48
+PARDER               : 16 17 18 19 21 22 55 56 63
+PARIZQ               : 16 17 18 19 21 22 55 56 63
+PLUS                 : 57
+PUNTOCOMA            : 1 2 3 4 5 6 10 12 13 14 15 16 17 17 18 19 19 20 21 21 22 22 23
+SBDER                : 4 5 5 6 6 6 13 14 15 40 41 41 42 42 42 43 44 44 45 45 45 68 69 69 70 70 70 71 72 72 73 73 73
+SBIZQ                : 4 5 5 6 6 6 13 14 15 40 41 41 42 42 42 43 44 44 45 45 45 68 69 69 70 70 70 71 72 72 73 73 73
+VAR                  : 3
+WHILE                : 18
+error                : 
+
+Nonterminals, with rules where they appear
+
+auxAssignFor         : 19
+auxFauxFor           : 19
+auxFauxLoop          : 23
+auxFauxWhile         : 18
+auxFinFor            : 19
+auxFinLoop           : 20
+auxFinWhile          : 18
+auxIniFor            : 19
+auxIniLoop           : 20
+auxIniWhile          : 18
+cond                 : 16 17 18 19 21 22 47 48
+e                    : 12 19 57 58 63
+f                    : 1 10
+ifAux                : 16 17 21 22
+ifAuxElse            : 17 22
+ifEndAux             : 16 17 22
+ifEndAuxEsp          : 21
+m                    : 60 61 62
+operador             : 49 49 50 50 51 51 52 52 53 53 54 54 64
+oprel                : 46 47 48 55 56
+prog                 : 0
+st                   : 1 2 10 12 13 14 15 16 16 17 17 17 18 18 19 19 20 20 21 22 23
+t                    : 57 58 59 60 61
+tipo                 : 3 4 5 6
+v                    : 1 2 3 4 5 6
+variable             : 12 13 14 21 22
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . prog
+    (1) prog -> . v f MAIN CBIZQ st CBDER PUNTOCOMA
+    (2) prog -> . v MAIN CBIZQ st CBDER PUNTOCOMA
+    (3) v -> . v VAR tipo ID PUNTOCOMA
+    (4) v -> . v ARRAY tipo ID SBIZQ CTE SBDER PUNTOCOMA
+    (5) v -> . v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+    (6) v -> . v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+    (7) v -> .
+
+    MAIN            reduce using rule 7 (v -> .)
+    VAR             reduce using rule 7 (v -> .)
+    ARRAY           reduce using rule 7 (v -> .)
+    FUNCT           reduce using rule 7 (v -> .)
+
+    prog                           shift and go to state 1
+    v                              shift and go to state 2
+
+state 1
+
+    (0) S' -> prog .
+
+
+
+state 2
+
+    (1) prog -> v . f MAIN CBIZQ st CBDER PUNTOCOMA
+    (2) prog -> v . MAIN CBIZQ st CBDER PUNTOCOMA
+    (3) v -> v . VAR tipo ID PUNTOCOMA
+    (4) v -> v . ARRAY tipo ID SBIZQ CTE SBDER PUNTOCOMA
+    (5) v -> v . ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+    (6) v -> v . ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+    (10) f -> . FUNCT ID CBIZQ st CBDER PUNTOCOMA f
+    (11) f -> .
+
+  ! shift/reduce conflict for MAIN resolved as shift
+    MAIN            shift and go to state 4
+    VAR             shift and go to state 5
+    ARRAY           shift and go to state 6
+    FUNCT           shift and go to state 7
+
+  ! MAIN            [ reduce using rule 11 (f -> .) ]
+
+    f                              shift and go to state 3
+
+state 3
+
+    (1) prog -> v f . MAIN CBIZQ st CBDER PUNTOCOMA
+
+    MAIN            shift and go to state 8
+
+
+state 4
+
+    (2) prog -> v MAIN . CBIZQ st CBDER PUNTOCOMA
+
+    CBIZQ           shift and go to state 9
+
+
+state 5
+
+    (3) v -> v VAR . tipo ID PUNTOCOMA
+    (8) tipo -> . INT
+    (9) tipo -> . DEC
+
+    INT             shift and go to state 11
+    DEC             shift and go to state 12
+
+    tipo                           shift and go to state 10
+
+state 6
+
+    (4) v -> v ARRAY . tipo ID SBIZQ CTE SBDER PUNTOCOMA
+    (5) v -> v ARRAY . tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+    (6) v -> v ARRAY . tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+    (8) tipo -> . INT
+    (9) tipo -> . DEC
+
+    INT             shift and go to state 11
+    DEC             shift and go to state 12
+
+    tipo                           shift and go to state 13
+
+state 7
+
+    (10) f -> FUNCT . ID CBIZQ st CBDER PUNTOCOMA f
+
+    ID              shift and go to state 14
+
+
+state 8
+
+    (1) prog -> v f MAIN . CBIZQ st CBDER PUNTOCOMA
+
+    CBIZQ           shift and go to state 15
+
+
+state 9
+
+    (2) prog -> v MAIN CBIZQ . st CBDER PUNTOCOMA
+    (12) st -> . st LET variable IGUAL e PUNTOCOMA
+    (13) st -> . st ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> . st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> . st DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> . st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> . st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> . st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> . st BREAK auxFauxLoop PUNTOCOMA
+    (24) st -> .
+
+    CBDER           reduce using rule 24 (st -> .)
+    LET             reduce using rule 24 (st -> .)
+    ENTER           reduce using rule 24 (st -> .)
+    DISPLAY         reduce using rule 24 (st -> .)
+    IF              reduce using rule 24 (st -> .)
+    DO              reduce using rule 24 (st -> .)
+    BREAK           reduce using rule 24 (st -> .)
+    WHILE           reduce using rule 24 (st -> .)
+    FOR             reduce using rule 24 (st -> .)
+
+    st                             shift and go to state 16
+
+state 10
+
+    (3) v -> v VAR tipo . ID PUNTOCOMA
+
+    ID              shift and go to state 17
+
+
+state 11
+
+    (8) tipo -> INT .
+
+    ID              reduce using rule 8 (tipo -> INT .)
+
+
+state 12
+
+    (9) tipo -> DEC .
+
+    ID              reduce using rule 9 (tipo -> DEC .)
+
+
+state 13
+
+    (4) v -> v ARRAY tipo . ID SBIZQ CTE SBDER PUNTOCOMA
+    (5) v -> v ARRAY tipo . ID SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+    (6) v -> v ARRAY tipo . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+
+    ID              shift and go to state 18
+
+
+state 14
+
+    (10) f -> FUNCT ID . CBIZQ st CBDER PUNTOCOMA f
+
+    CBIZQ           shift and go to state 19
+
+
+state 15
+
+    (1) prog -> v f MAIN CBIZQ . st CBDER PUNTOCOMA
+    (12) st -> . st LET variable IGUAL e PUNTOCOMA
+    (13) st -> . st ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> . st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> . st DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> . st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> . st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> . st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> . st BREAK auxFauxLoop PUNTOCOMA
+    (24) st -> .
+
+    CBDER           reduce using rule 24 (st -> .)
+    LET             reduce using rule 24 (st -> .)
+    ENTER           reduce using rule 24 (st -> .)
+    DISPLAY         reduce using rule 24 (st -> .)
+    IF              reduce using rule 24 (st -> .)
+    DO              reduce using rule 24 (st -> .)
+    BREAK           reduce using rule 24 (st -> .)
+    WHILE           reduce using rule 24 (st -> .)
+    FOR             reduce using rule 24 (st -> .)
+
+    st                             shift and go to state 20
+
+state 16
+
+    (2) prog -> v MAIN CBIZQ st . CBDER PUNTOCOMA
+    (12) st -> st . LET variable IGUAL e PUNTOCOMA
+    (13) st -> st . ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> st . DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> st . DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> st . auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> st . auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> st . DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> st . BREAK auxFauxLoop PUNTOCOMA
+    (29) auxIniWhile -> .
+    (32) auxIniFor -> .
+
+    CBDER           shift and go to state 21
+    LET             shift and go to state 22
+    ENTER           shift and go to state 23
+    DISPLAY         shift and go to state 24
+    IF              shift and go to state 25
+    DO              shift and go to state 28
+    BREAK           shift and go to state 29
+    WHILE           reduce using rule 29 (auxIniWhile -> .)
+    FOR             reduce using rule 32 (auxIniFor -> .)
+
+    auxIniWhile                    shift and go to state 26
+    auxIniFor                      shift and go to state 27
+
+state 17
+
+    (3) v -> v VAR tipo ID . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 30
+
+
+state 18
+
+    (4) v -> v ARRAY tipo ID . SBIZQ CTE SBDER PUNTOCOMA
+    (5) v -> v ARRAY tipo ID . SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+    (6) v -> v ARRAY tipo ID . SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+
+    SBIZQ           shift and go to state 31
+
+
+state 19
+
+    (10) f -> FUNCT ID CBIZQ . st CBDER PUNTOCOMA f
+    (12) st -> . st LET variable IGUAL e PUNTOCOMA
+    (13) st -> . st ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> . st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> . st DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> . st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> . st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> . st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> . st BREAK auxFauxLoop PUNTOCOMA
+    (24) st -> .
+
+    CBDER           reduce using rule 24 (st -> .)
+    LET             reduce using rule 24 (st -> .)
+    ENTER           reduce using rule 24 (st -> .)
+    DISPLAY         reduce using rule 24 (st -> .)
+    IF              reduce using rule 24 (st -> .)
+    DO              reduce using rule 24 (st -> .)
+    BREAK           reduce using rule 24 (st -> .)
+    WHILE           reduce using rule 24 (st -> .)
+    FOR             reduce using rule 24 (st -> .)
+
+    st                             shift and go to state 32
+
+state 20
+
+    (1) prog -> v f MAIN CBIZQ st . CBDER PUNTOCOMA
+    (12) st -> st . LET variable IGUAL e PUNTOCOMA
+    (13) st -> st . ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> st . DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> st . DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> st . auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> st . auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> st . DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> st . BREAK auxFauxLoop PUNTOCOMA
+    (29) auxIniWhile -> .
+    (32) auxIniFor -> .
+
+    CBDER           shift and go to state 33
+    LET             shift and go to state 22
+    ENTER           shift and go to state 23
+    DISPLAY         shift and go to state 24
+    IF              shift and go to state 25
+    DO              shift and go to state 28
+    BREAK           shift and go to state 29
+    WHILE           reduce using rule 29 (auxIniWhile -> .)
+    FOR             reduce using rule 32 (auxIniFor -> .)
+
+    auxIniWhile                    shift and go to state 26
+    auxIniFor                      shift and go to state 27
+
+state 21
+
+    (2) prog -> v MAIN CBIZQ st CBDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 34
+
+
+state 22
+
+    (12) st -> st LET . variable IGUAL e PUNTOCOMA
+    (21) st -> st LET . variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st LET . variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (39) variable -> . ID
+    (40) variable -> . ID SBIZQ CTE SBDER
+    (41) variable -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (42) variable -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (43) variable -> . ID SBIZQ ID SBDER
+    (44) variable -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (45) variable -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    ID              shift and go to state 36
+
+    variable                       shift and go to state 35
+
+state 23
+
+    (13) st -> st ENTER . SBIZQ variable SBDER PUNTOCOMA
+
+    SBIZQ           shift and go to state 37
+
+
+state 24
+
+    (14) st -> st DISPLAY . SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> st DISPLAY . SBIZQ MSG SBDER PUNTOCOMA
+
+    SBIZQ           shift and go to state 38
+
+
+state 25
+
+    (16) st -> st IF . PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st IF . PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+
+    PARIZQ          shift and go to state 39
+
+
+state 26
+
+    (18) st -> st auxIniWhile . WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+
+    WHILE           shift and go to state 40
+
+
+state 27
+
+    (19) st -> st auxIniFor . FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+
+    FOR             shift and go to state 41
+
+
+state 28
+
+    (20) st -> st DO . auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (36) auxIniLoop -> .
+
+    CBIZQ           reduce using rule 36 (auxIniLoop -> .)
+
+    auxIniLoop                     shift and go to state 42
+
+state 29
+
+    (23) st -> st BREAK . auxFauxLoop PUNTOCOMA
+    (37) auxFauxLoop -> .
+
+    PUNTOCOMA       reduce using rule 37 (auxFauxLoop -> .)
+
+    auxFauxLoop                    shift and go to state 43
+
+state 30
+
+    (3) v -> v VAR tipo ID PUNTOCOMA .
+
+    MAIN            reduce using rule 3 (v -> v VAR tipo ID PUNTOCOMA .)
+    VAR             reduce using rule 3 (v -> v VAR tipo ID PUNTOCOMA .)
+    ARRAY           reduce using rule 3 (v -> v VAR tipo ID PUNTOCOMA .)
+    FUNCT           reduce using rule 3 (v -> v VAR tipo ID PUNTOCOMA .)
+
+
+state 31
+
+    (4) v -> v ARRAY tipo ID SBIZQ . CTE SBDER PUNTOCOMA
+    (5) v -> v ARRAY tipo ID SBIZQ . CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+    (6) v -> v ARRAY tipo ID SBIZQ . CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+
+    CTE             shift and go to state 44
+
+
+state 32
+
+    (10) f -> FUNCT ID CBIZQ st . CBDER PUNTOCOMA f
+    (12) st -> st . LET variable IGUAL e PUNTOCOMA
+    (13) st -> st . ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> st . DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> st . DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> st . auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> st . auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> st . DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> st . BREAK auxFauxLoop PUNTOCOMA
+    (29) auxIniWhile -> .
+    (32) auxIniFor -> .
+
+    CBDER           shift and go to state 45
+    LET             shift and go to state 22
+    ENTER           shift and go to state 23
+    DISPLAY         shift and go to state 24
+    IF              shift and go to state 25
+    DO              shift and go to state 28
+    BREAK           shift and go to state 29
+    WHILE           reduce using rule 29 (auxIniWhile -> .)
+    FOR             reduce using rule 32 (auxIniFor -> .)
+
+    auxIniWhile                    shift and go to state 26
+    auxIniFor                      shift and go to state 27
+
+state 33
+
+    (1) prog -> v f MAIN CBIZQ st CBDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 46
+
+
+state 34
+
+    (2) prog -> v MAIN CBIZQ st CBDER PUNTOCOMA .
+
+    $end            reduce using rule 2 (prog -> v MAIN CBIZQ st CBDER PUNTOCOMA .)
+
+
+state 35
+
+    (12) st -> st LET variable . IGUAL e PUNTOCOMA
+    (21) st -> st LET variable . IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st LET variable . IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+
+    IGUAL           shift and go to state 47
+
+
+state 36
+
+    (39) variable -> ID .
+    (40) variable -> ID . SBIZQ CTE SBDER
+    (41) variable -> ID . SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (42) variable -> ID . SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (43) variable -> ID . SBIZQ ID SBDER
+    (44) variable -> ID . SBIZQ ID SBDER SBIZQ ID SBDER
+    (45) variable -> ID . SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    IGUAL           reduce using rule 39 (variable -> ID .)
+    SBDER           reduce using rule 39 (variable -> ID .)
+    SBIZQ           shift and go to state 48
+
+
+state 37
+
+    (13) st -> st ENTER SBIZQ . variable SBDER PUNTOCOMA
+    (39) variable -> . ID
+    (40) variable -> . ID SBIZQ CTE SBDER
+    (41) variable -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (42) variable -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (43) variable -> . ID SBIZQ ID SBDER
+    (44) variable -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (45) variable -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    ID              shift and go to state 36
+
+    variable                       shift and go to state 49
+
+state 38
+
+    (14) st -> st DISPLAY SBIZQ . MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> st DISPLAY SBIZQ . MSG SBDER PUNTOCOMA
+
+    MSG             shift and go to state 50
+
+
+state 39
+
+    (16) st -> st IF PARIZQ . cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st IF PARIZQ . cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (46) cond -> . oprel
+    (47) cond -> . cond AND oprel
+    (48) cond -> . cond OR oprel
+    (49) oprel -> . operador IGUALIGUAL operador
+    (50) oprel -> . operador DIFERENTE operador
+    (51) oprel -> . operador MAYOR operador
+    (52) oprel -> . operador MENOR operador
+    (53) oprel -> . operador MAYORQUE operador
+    (54) oprel -> . operador MENORQUE operador
+    (55) oprel -> . PARIZQ oprel PARDER
+    (56) oprel -> . NOT PARIZQ oprel PARDER
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 51
+    NOT             shift and go to state 55
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    cond                           shift and go to state 52
+    oprel                          shift and go to state 53
+    operador                       shift and go to state 54
+
+state 40
+
+    (18) st -> st auxIniWhile WHILE . PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+
+    PARIZQ          shift and go to state 59
+
+
+state 41
+
+    (19) st -> st auxIniFor FOR . PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+
+    PARIZQ          shift and go to state 60
+
+
+state 42
+
+    (20) st -> st DO auxIniLoop . CBIZQ st CBDER PUNTOCOMA auxFinLoop
+
+    CBIZQ           shift and go to state 61
+
+
+state 43
+
+    (23) st -> st BREAK auxFauxLoop . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 62
+
+
+state 44
+
+    (4) v -> v ARRAY tipo ID SBIZQ CTE . SBDER PUNTOCOMA
+    (5) v -> v ARRAY tipo ID SBIZQ CTE . SBDER SBIZQ CTE SBDER PUNTOCOMA
+    (6) v -> v ARRAY tipo ID SBIZQ CTE . SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+
+    SBDER           shift and go to state 63
+
+
+state 45
+
+    (10) f -> FUNCT ID CBIZQ st CBDER . PUNTOCOMA f
+
+    PUNTOCOMA       shift and go to state 64
+
+
+state 46
+
+    (1) prog -> v f MAIN CBIZQ st CBDER PUNTOCOMA .
+
+    $end            reduce using rule 1 (prog -> v f MAIN CBIZQ st CBDER PUNTOCOMA .)
+
+
+state 47
+
+    (12) st -> st LET variable IGUAL . e PUNTOCOMA
+    (21) st -> st LET variable IGUAL . IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st LET variable IGUAL . IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (57) e -> . e PLUS t
+    (58) e -> . e MENOS t
+    (59) e -> . t
+    (60) t -> . t MULT m
+    (61) t -> . t DIV m
+    (62) t -> . m
+    (63) m -> . PARIZQ e PARDER
+    (64) m -> . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    IF              shift and go to state 66
+    PARIZQ          shift and go to state 67
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    e                              shift and go to state 65
+    t                              shift and go to state 68
+    m                              shift and go to state 69
+    operador                       shift and go to state 70
+
+state 48
+
+    (40) variable -> ID SBIZQ . CTE SBDER
+    (41) variable -> ID SBIZQ . CTE SBDER SBIZQ CTE SBDER
+    (42) variable -> ID SBIZQ . CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (43) variable -> ID SBIZQ . ID SBDER
+    (44) variable -> ID SBIZQ . ID SBDER SBIZQ ID SBDER
+    (45) variable -> ID SBIZQ . ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    CTE             shift and go to state 72
+    ID              shift and go to state 71
+
+
+state 49
+
+    (13) st -> st ENTER SBIZQ variable . SBDER PUNTOCOMA
+
+    SBDER           shift and go to state 73
+
+
+state 50
+
+    (14) st -> st DISPLAY SBIZQ MSG . COMA variable SBDER PUNTOCOMA
+    (15) st -> st DISPLAY SBIZQ MSG . SBDER PUNTOCOMA
+
+    COMA            shift and go to state 74
+    SBDER           shift and go to state 75
+
+
+state 51
+
+    (55) oprel -> PARIZQ . oprel PARDER
+    (49) oprel -> . operador IGUALIGUAL operador
+    (50) oprel -> . operador DIFERENTE operador
+    (51) oprel -> . operador MAYOR operador
+    (52) oprel -> . operador MENOR operador
+    (53) oprel -> . operador MAYORQUE operador
+    (54) oprel -> . operador MENORQUE operador
+    (55) oprel -> . PARIZQ oprel PARDER
+    (56) oprel -> . NOT PARIZQ oprel PARDER
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 51
+    NOT             shift and go to state 55
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    oprel                          shift and go to state 76
+    operador                       shift and go to state 54
+
+state 52
+
+    (16) st -> st IF PARIZQ cond . PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st IF PARIZQ cond . PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (47) cond -> cond . AND oprel
+    (48) cond -> cond . OR oprel
+
+    PARDER          shift and go to state 77
+    AND             shift and go to state 78
+    OR              shift and go to state 79
+
+
+state 53
+
+    (46) cond -> oprel .
+
+    PARDER          reduce using rule 46 (cond -> oprel .)
+    AND             reduce using rule 46 (cond -> oprel .)
+    OR              reduce using rule 46 (cond -> oprel .)
+    PUNTOCOMA       reduce using rule 46 (cond -> oprel .)
+
+
+state 54
+
+    (49) oprel -> operador . IGUALIGUAL operador
+    (50) oprel -> operador . DIFERENTE operador
+    (51) oprel -> operador . MAYOR operador
+    (52) oprel -> operador . MENOR operador
+    (53) oprel -> operador . MAYORQUE operador
+    (54) oprel -> operador . MENORQUE operador
+
+    IGUALIGUAL      shift and go to state 80
+    DIFERENTE       shift and go to state 81
+    MAYOR           shift and go to state 82
+    MENOR           shift and go to state 83
+    MAYORQUE        shift and go to state 84
+    MENORQUE        shift and go to state 85
+
+
+state 55
+
+    (56) oprel -> NOT . PARIZQ oprel PARDER
+
+    PARIZQ          shift and go to state 86
+
+
+state 56
+
+    (65) operador -> CTE .
+
+    IGUALIGUAL      reduce using rule 65 (operador -> CTE .)
+    DIFERENTE       reduce using rule 65 (operador -> CTE .)
+    MAYOR           reduce using rule 65 (operador -> CTE .)
+    MENOR           reduce using rule 65 (operador -> CTE .)
+    MAYORQUE        reduce using rule 65 (operador -> CTE .)
+    MENORQUE        reduce using rule 65 (operador -> CTE .)
+    MULT            reduce using rule 65 (operador -> CTE .)
+    DIV             reduce using rule 65 (operador -> CTE .)
+    PUNTOCOMA       reduce using rule 65 (operador -> CTE .)
+    PLUS            reduce using rule 65 (operador -> CTE .)
+    MENOS           reduce using rule 65 (operador -> CTE .)
+    PARDER          reduce using rule 65 (operador -> CTE .)
+    AND             reduce using rule 65 (operador -> CTE .)
+    OR              reduce using rule 65 (operador -> CTE .)
+
+
+state 57
+
+    (66) operador -> FLOAT .
+
+    IGUALIGUAL      reduce using rule 66 (operador -> FLOAT .)
+    DIFERENTE       reduce using rule 66 (operador -> FLOAT .)
+    MAYOR           reduce using rule 66 (operador -> FLOAT .)
+    MENOR           reduce using rule 66 (operador -> FLOAT .)
+    MAYORQUE        reduce using rule 66 (operador -> FLOAT .)
+    MENORQUE        reduce using rule 66 (operador -> FLOAT .)
+    MULT            reduce using rule 66 (operador -> FLOAT .)
+    DIV             reduce using rule 66 (operador -> FLOAT .)
+    PUNTOCOMA       reduce using rule 66 (operador -> FLOAT .)
+    PLUS            reduce using rule 66 (operador -> FLOAT .)
+    MENOS           reduce using rule 66 (operador -> FLOAT .)
+    PARDER          reduce using rule 66 (operador -> FLOAT .)
+    AND             reduce using rule 66 (operador -> FLOAT .)
+    OR              reduce using rule 66 (operador -> FLOAT .)
+
+
+state 58
+
+    (67) operador -> ID .
+    (68) operador -> ID . SBIZQ CTE SBDER
+    (69) operador -> ID . SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> ID . SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> ID . SBIZQ ID SBDER
+    (72) operador -> ID . SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> ID . SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    IGUALIGUAL      reduce using rule 67 (operador -> ID .)
+    DIFERENTE       reduce using rule 67 (operador -> ID .)
+    MAYOR           reduce using rule 67 (operador -> ID .)
+    MENOR           reduce using rule 67 (operador -> ID .)
+    MAYORQUE        reduce using rule 67 (operador -> ID .)
+    MENORQUE        reduce using rule 67 (operador -> ID .)
+    MULT            reduce using rule 67 (operador -> ID .)
+    DIV             reduce using rule 67 (operador -> ID .)
+    PUNTOCOMA       reduce using rule 67 (operador -> ID .)
+    PLUS            reduce using rule 67 (operador -> ID .)
+    MENOS           reduce using rule 67 (operador -> ID .)
+    PARDER          reduce using rule 67 (operador -> ID .)
+    AND             reduce using rule 67 (operador -> ID .)
+    OR              reduce using rule 67 (operador -> ID .)
+    SBIZQ           shift and go to state 87
+
+
+state 59
+
+    (18) st -> st auxIniWhile WHILE PARIZQ . cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (46) cond -> . oprel
+    (47) cond -> . cond AND oprel
+    (48) cond -> . cond OR oprel
+    (49) oprel -> . operador IGUALIGUAL operador
+    (50) oprel -> . operador DIFERENTE operador
+    (51) oprel -> . operador MAYOR operador
+    (52) oprel -> . operador MENOR operador
+    (53) oprel -> . operador MAYORQUE operador
+    (54) oprel -> . operador MENORQUE operador
+    (55) oprel -> . PARIZQ oprel PARDER
+    (56) oprel -> . NOT PARIZQ oprel PARDER
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 51
+    NOT             shift and go to state 55
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    cond                           shift and go to state 88
+    oprel                          shift and go to state 53
+    operador                       shift and go to state 54
+
+state 60
+
+    (19) st -> st auxIniFor FOR PARIZQ . cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (46) cond -> . oprel
+    (47) cond -> . cond AND oprel
+    (48) cond -> . cond OR oprel
+    (49) oprel -> . operador IGUALIGUAL operador
+    (50) oprel -> . operador DIFERENTE operador
+    (51) oprel -> . operador MAYOR operador
+    (52) oprel -> . operador MENOR operador
+    (53) oprel -> . operador MAYORQUE operador
+    (54) oprel -> . operador MENORQUE operador
+    (55) oprel -> . PARIZQ oprel PARDER
+    (56) oprel -> . NOT PARIZQ oprel PARDER
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 51
+    NOT             shift and go to state 55
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    cond                           shift and go to state 89
+    oprel                          shift and go to state 53
+    operador                       shift and go to state 54
+
+state 61
+
+    (20) st -> st DO auxIniLoop CBIZQ . st CBDER PUNTOCOMA auxFinLoop
+    (12) st -> . st LET variable IGUAL e PUNTOCOMA
+    (13) st -> . st ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> . st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> . st DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> . st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> . st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> . st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> . st BREAK auxFauxLoop PUNTOCOMA
+    (24) st -> .
+
+    CBDER           reduce using rule 24 (st -> .)
+    LET             reduce using rule 24 (st -> .)
+    ENTER           reduce using rule 24 (st -> .)
+    DISPLAY         reduce using rule 24 (st -> .)
+    IF              reduce using rule 24 (st -> .)
+    DO              reduce using rule 24 (st -> .)
+    BREAK           reduce using rule 24 (st -> .)
+    WHILE           reduce using rule 24 (st -> .)
+    FOR             reduce using rule 24 (st -> .)
+
+    st                             shift and go to state 90
+
+state 62
+
+    (23) st -> st BREAK auxFauxLoop PUNTOCOMA .
+
+    CBDER           reduce using rule 23 (st -> st BREAK auxFauxLoop PUNTOCOMA .)
+    LET             reduce using rule 23 (st -> st BREAK auxFauxLoop PUNTOCOMA .)
+    ENTER           reduce using rule 23 (st -> st BREAK auxFauxLoop PUNTOCOMA .)
+    DISPLAY         reduce using rule 23 (st -> st BREAK auxFauxLoop PUNTOCOMA .)
+    IF              reduce using rule 23 (st -> st BREAK auxFauxLoop PUNTOCOMA .)
+    DO              reduce using rule 23 (st -> st BREAK auxFauxLoop PUNTOCOMA .)
+    BREAK           reduce using rule 23 (st -> st BREAK auxFauxLoop PUNTOCOMA .)
+    WHILE           reduce using rule 23 (st -> st BREAK auxFauxLoop PUNTOCOMA .)
+    FOR             reduce using rule 23 (st -> st BREAK auxFauxLoop PUNTOCOMA .)
+
+
+state 63
+
+    (4) v -> v ARRAY tipo ID SBIZQ CTE SBDER . PUNTOCOMA
+    (5) v -> v ARRAY tipo ID SBIZQ CTE SBDER . SBIZQ CTE SBDER PUNTOCOMA
+    (6) v -> v ARRAY tipo ID SBIZQ CTE SBDER . SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 92
+    SBIZQ           shift and go to state 91
+
+
+state 64
+
+    (10) f -> FUNCT ID CBIZQ st CBDER PUNTOCOMA . f
+    (10) f -> . FUNCT ID CBIZQ st CBDER PUNTOCOMA f
+    (11) f -> .
+
+    FUNCT           shift and go to state 7
+    MAIN            reduce using rule 11 (f -> .)
+
+    f                              shift and go to state 93
+
+state 65
+
+    (12) st -> st LET variable IGUAL e . PUNTOCOMA
+    (57) e -> e . PLUS t
+    (58) e -> e . MENOS t
+
+    PUNTOCOMA       shift and go to state 94
+    PLUS            shift and go to state 95
+    MENOS           shift and go to state 96
+
+
+state 66
+
+    (21) st -> st LET variable IGUAL IF . PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st LET variable IGUAL IF . PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+
+    PARIZQ          shift and go to state 97
+
+
+state 67
+
+    (63) m -> PARIZQ . e PARDER
+    (57) e -> . e PLUS t
+    (58) e -> . e MENOS t
+    (59) e -> . t
+    (60) t -> . t MULT m
+    (61) t -> . t DIV m
+    (62) t -> . m
+    (63) m -> . PARIZQ e PARDER
+    (64) m -> . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 67
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    e                              shift and go to state 98
+    t                              shift and go to state 68
+    m                              shift and go to state 69
+    operador                       shift and go to state 70
+
+state 68
+
+    (59) e -> t .
+    (60) t -> t . MULT m
+    (61) t -> t . DIV m
+
+    PUNTOCOMA       reduce using rule 59 (e -> t .)
+    PLUS            reduce using rule 59 (e -> t .)
+    MENOS           reduce using rule 59 (e -> t .)
+    PARDER          reduce using rule 59 (e -> t .)
+    MULT            shift and go to state 99
+    DIV             shift and go to state 100
+
+
+state 69
+
+    (62) t -> m .
+
+    MULT            reduce using rule 62 (t -> m .)
+    DIV             reduce using rule 62 (t -> m .)
+    PUNTOCOMA       reduce using rule 62 (t -> m .)
+    PLUS            reduce using rule 62 (t -> m .)
+    MENOS           reduce using rule 62 (t -> m .)
+    PARDER          reduce using rule 62 (t -> m .)
+
+
+state 70
+
+    (64) m -> operador .
+
+    MULT            reduce using rule 64 (m -> operador .)
+    DIV             reduce using rule 64 (m -> operador .)
+    PUNTOCOMA       reduce using rule 64 (m -> operador .)
+    PLUS            reduce using rule 64 (m -> operador .)
+    MENOS           reduce using rule 64 (m -> operador .)
+    PARDER          reduce using rule 64 (m -> operador .)
+
+
+state 71
+
+    (43) variable -> ID SBIZQ ID . SBDER
+    (44) variable -> ID SBIZQ ID . SBDER SBIZQ ID SBDER
+    (45) variable -> ID SBIZQ ID . SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    SBDER           shift and go to state 101
+
+
+state 72
+
+    (40) variable -> ID SBIZQ CTE . SBDER
+    (41) variable -> ID SBIZQ CTE . SBDER SBIZQ CTE SBDER
+    (42) variable -> ID SBIZQ CTE . SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+
+    SBDER           shift and go to state 102
+
+
+state 73
+
+    (13) st -> st ENTER SBIZQ variable SBDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 103
+
+
+state 74
+
+    (14) st -> st DISPLAY SBIZQ MSG COMA . variable SBDER PUNTOCOMA
+    (39) variable -> . ID
+    (40) variable -> . ID SBIZQ CTE SBDER
+    (41) variable -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (42) variable -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (43) variable -> . ID SBIZQ ID SBDER
+    (44) variable -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (45) variable -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    ID              shift and go to state 36
+
+    variable                       shift and go to state 104
+
+state 75
+
+    (15) st -> st DISPLAY SBIZQ MSG SBDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 105
+
+
+state 76
+
+    (55) oprel -> PARIZQ oprel . PARDER
+
+    PARDER          shift and go to state 106
+
+
+state 77
+
+    (16) st -> st IF PARIZQ cond PARDER . ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st IF PARIZQ cond PARDER . ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (25) ifAux -> .
+
+    CBIZQ           reduce using rule 25 (ifAux -> .)
+
+    ifAux                          shift and go to state 107
+
+state 78
+
+    (47) cond -> cond AND . oprel
+    (49) oprel -> . operador IGUALIGUAL operador
+    (50) oprel -> . operador DIFERENTE operador
+    (51) oprel -> . operador MAYOR operador
+    (52) oprel -> . operador MENOR operador
+    (53) oprel -> . operador MAYORQUE operador
+    (54) oprel -> . operador MENORQUE operador
+    (55) oprel -> . PARIZQ oprel PARDER
+    (56) oprel -> . NOT PARIZQ oprel PARDER
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 51
+    NOT             shift and go to state 55
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    oprel                          shift and go to state 108
+    operador                       shift and go to state 54
+
+state 79
+
+    (48) cond -> cond OR . oprel
+    (49) oprel -> . operador IGUALIGUAL operador
+    (50) oprel -> . operador DIFERENTE operador
+    (51) oprel -> . operador MAYOR operador
+    (52) oprel -> . operador MENOR operador
+    (53) oprel -> . operador MAYORQUE operador
+    (54) oprel -> . operador MENORQUE operador
+    (55) oprel -> . PARIZQ oprel PARDER
+    (56) oprel -> . NOT PARIZQ oprel PARDER
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 51
+    NOT             shift and go to state 55
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    oprel                          shift and go to state 109
+    operador                       shift and go to state 54
+
+state 80
+
+    (49) oprel -> operador IGUALIGUAL . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    operador                       shift and go to state 110
+
+state 81
+
+    (50) oprel -> operador DIFERENTE . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    operador                       shift and go to state 111
+
+state 82
+
+    (51) oprel -> operador MAYOR . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    operador                       shift and go to state 112
+
+state 83
+
+    (52) oprel -> operador MENOR . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    operador                       shift and go to state 113
+
+state 84
+
+    (53) oprel -> operador MAYORQUE . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    operador                       shift and go to state 114
+
+state 85
+
+    (54) oprel -> operador MENORQUE . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    operador                       shift and go to state 115
+
+state 86
+
+    (56) oprel -> NOT PARIZQ . oprel PARDER
+    (49) oprel -> . operador IGUALIGUAL operador
+    (50) oprel -> . operador DIFERENTE operador
+    (51) oprel -> . operador MAYOR operador
+    (52) oprel -> . operador MENOR operador
+    (53) oprel -> . operador MAYORQUE operador
+    (54) oprel -> . operador MENORQUE operador
+    (55) oprel -> . PARIZQ oprel PARDER
+    (56) oprel -> . NOT PARIZQ oprel PARDER
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 51
+    NOT             shift and go to state 55
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    oprel                          shift and go to state 116
+    operador                       shift and go to state 54
+
+state 87
+
+    (68) operador -> ID SBIZQ . CTE SBDER
+    (69) operador -> ID SBIZQ . CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> ID SBIZQ . CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> ID SBIZQ . ID SBDER
+    (72) operador -> ID SBIZQ . ID SBDER SBIZQ ID SBDER
+    (73) operador -> ID SBIZQ . ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    CTE             shift and go to state 118
+    ID              shift and go to state 117
+
+
+state 88
+
+    (18) st -> st auxIniWhile WHILE PARIZQ cond . PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (47) cond -> cond . AND oprel
+    (48) cond -> cond . OR oprel
+
+    PARDER          shift and go to state 119
+    AND             shift and go to state 78
+    OR              shift and go to state 79
+
+
+state 89
+
+    (19) st -> st auxIniFor FOR PARIZQ cond . auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (47) cond -> cond . AND oprel
+    (48) cond -> cond . OR oprel
+    (33) auxFauxFor -> .
+
+    AND             shift and go to state 78
+    OR              shift and go to state 79
+    PUNTOCOMA       reduce using rule 33 (auxFauxFor -> .)
+
+    auxFauxFor                     shift and go to state 120
+
+state 90
+
+    (20) st -> st DO auxIniLoop CBIZQ st . CBDER PUNTOCOMA auxFinLoop
+    (12) st -> st . LET variable IGUAL e PUNTOCOMA
+    (13) st -> st . ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> st . DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> st . DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> st . auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> st . auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> st . DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> st . BREAK auxFauxLoop PUNTOCOMA
+    (29) auxIniWhile -> .
+    (32) auxIniFor -> .
+
+    CBDER           shift and go to state 121
+    LET             shift and go to state 22
+    ENTER           shift and go to state 23
+    DISPLAY         shift and go to state 24
+    IF              shift and go to state 25
+    DO              shift and go to state 28
+    BREAK           shift and go to state 29
+    WHILE           reduce using rule 29 (auxIniWhile -> .)
+    FOR             reduce using rule 32 (auxIniFor -> .)
+
+    auxIniWhile                    shift and go to state 26
+    auxIniFor                      shift and go to state 27
+
+state 91
+
+    (5) v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ . CTE SBDER PUNTOCOMA
+    (6) v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ . CTE SBDER SBIZQ CTE SBDER PUNTOCOMA
+
+    CTE             shift and go to state 122
+
+
+state 92
+
+    (4) v -> v ARRAY tipo ID SBIZQ CTE SBDER PUNTOCOMA .
+
+    MAIN            reduce using rule 4 (v -> v ARRAY tipo ID SBIZQ CTE SBDER PUNTOCOMA .)
+    VAR             reduce using rule 4 (v -> v ARRAY tipo ID SBIZQ CTE SBDER PUNTOCOMA .)
+    ARRAY           reduce using rule 4 (v -> v ARRAY tipo ID SBIZQ CTE SBDER PUNTOCOMA .)
+    FUNCT           reduce using rule 4 (v -> v ARRAY tipo ID SBIZQ CTE SBDER PUNTOCOMA .)
+
+
+state 93
+
+    (10) f -> FUNCT ID CBIZQ st CBDER PUNTOCOMA f .
+
+    MAIN            reduce using rule 10 (f -> FUNCT ID CBIZQ st CBDER PUNTOCOMA f .)
+
+
+state 94
+
+    (12) st -> st LET variable IGUAL e PUNTOCOMA .
+
+    CBDER           reduce using rule 12 (st -> st LET variable IGUAL e PUNTOCOMA .)
+    LET             reduce using rule 12 (st -> st LET variable IGUAL e PUNTOCOMA .)
+    ENTER           reduce using rule 12 (st -> st LET variable IGUAL e PUNTOCOMA .)
+    DISPLAY         reduce using rule 12 (st -> st LET variable IGUAL e PUNTOCOMA .)
+    IF              reduce using rule 12 (st -> st LET variable IGUAL e PUNTOCOMA .)
+    DO              reduce using rule 12 (st -> st LET variable IGUAL e PUNTOCOMA .)
+    BREAK           reduce using rule 12 (st -> st LET variable IGUAL e PUNTOCOMA .)
+    WHILE           reduce using rule 12 (st -> st LET variable IGUAL e PUNTOCOMA .)
+    FOR             reduce using rule 12 (st -> st LET variable IGUAL e PUNTOCOMA .)
+
+
+state 95
+
+    (57) e -> e PLUS . t
+    (60) t -> . t MULT m
+    (61) t -> . t DIV m
+    (62) t -> . m
+    (63) m -> . PARIZQ e PARDER
+    (64) m -> . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 67
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    t                              shift and go to state 123
+    m                              shift and go to state 69
+    operador                       shift and go to state 70
+
+state 96
+
+    (58) e -> e MENOS . t
+    (60) t -> . t MULT m
+    (61) t -> . t DIV m
+    (62) t -> . m
+    (63) m -> . PARIZQ e PARDER
+    (64) m -> . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 67
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    t                              shift and go to state 124
+    m                              shift and go to state 69
+    operador                       shift and go to state 70
+
+state 97
+
+    (21) st -> st LET variable IGUAL IF PARIZQ . cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st LET variable IGUAL IF PARIZQ . cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (46) cond -> . oprel
+    (47) cond -> . cond AND oprel
+    (48) cond -> . cond OR oprel
+    (49) oprel -> . operador IGUALIGUAL operador
+    (50) oprel -> . operador DIFERENTE operador
+    (51) oprel -> . operador MAYOR operador
+    (52) oprel -> . operador MENOR operador
+    (53) oprel -> . operador MAYORQUE operador
+    (54) oprel -> . operador MENORQUE operador
+    (55) oprel -> . PARIZQ oprel PARDER
+    (56) oprel -> . NOT PARIZQ oprel PARDER
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 51
+    NOT             shift and go to state 55
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    cond                           shift and go to state 125
+    oprel                          shift and go to state 53
+    operador                       shift and go to state 54
+
+state 98
+
+    (63) m -> PARIZQ e . PARDER
+    (57) e -> e . PLUS t
+    (58) e -> e . MENOS t
+
+    PARDER          shift and go to state 126
+    PLUS            shift and go to state 95
+    MENOS           shift and go to state 96
+
+
+state 99
+
+    (60) t -> t MULT . m
+    (63) m -> . PARIZQ e PARDER
+    (64) m -> . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 67
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    m                              shift and go to state 127
+    operador                       shift and go to state 70
+
+state 100
+
+    (61) t -> t DIV . m
+    (63) m -> . PARIZQ e PARDER
+    (64) m -> . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 67
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    m                              shift and go to state 128
+    operador                       shift and go to state 70
+
+state 101
+
+    (43) variable -> ID SBIZQ ID SBDER .
+    (44) variable -> ID SBIZQ ID SBDER . SBIZQ ID SBDER
+    (45) variable -> ID SBIZQ ID SBDER . SBIZQ ID SBDER SBIZQ ID SBDER
+
+    IGUAL           reduce using rule 43 (variable -> ID SBIZQ ID SBDER .)
+    SBDER           reduce using rule 43 (variable -> ID SBIZQ ID SBDER .)
+    SBIZQ           shift and go to state 129
+
+
+state 102
+
+    (40) variable -> ID SBIZQ CTE SBDER .
+    (41) variable -> ID SBIZQ CTE SBDER . SBIZQ CTE SBDER
+    (42) variable -> ID SBIZQ CTE SBDER . SBIZQ CTE SBDER SBIZQ CTE SBDER
+
+    IGUAL           reduce using rule 40 (variable -> ID SBIZQ CTE SBDER .)
+    SBDER           reduce using rule 40 (variable -> ID SBIZQ CTE SBDER .)
+    SBIZQ           shift and go to state 130
+
+
+state 103
+
+    (13) st -> st ENTER SBIZQ variable SBDER PUNTOCOMA .
+
+    CBDER           reduce using rule 13 (st -> st ENTER SBIZQ variable SBDER PUNTOCOMA .)
+    LET             reduce using rule 13 (st -> st ENTER SBIZQ variable SBDER PUNTOCOMA .)
+    ENTER           reduce using rule 13 (st -> st ENTER SBIZQ variable SBDER PUNTOCOMA .)
+    DISPLAY         reduce using rule 13 (st -> st ENTER SBIZQ variable SBDER PUNTOCOMA .)
+    IF              reduce using rule 13 (st -> st ENTER SBIZQ variable SBDER PUNTOCOMA .)
+    DO              reduce using rule 13 (st -> st ENTER SBIZQ variable SBDER PUNTOCOMA .)
+    BREAK           reduce using rule 13 (st -> st ENTER SBIZQ variable SBDER PUNTOCOMA .)
+    WHILE           reduce using rule 13 (st -> st ENTER SBIZQ variable SBDER PUNTOCOMA .)
+    FOR             reduce using rule 13 (st -> st ENTER SBIZQ variable SBDER PUNTOCOMA .)
+
+
+state 104
+
+    (14) st -> st DISPLAY SBIZQ MSG COMA variable . SBDER PUNTOCOMA
+
+    SBDER           shift and go to state 131
+
+
+state 105
+
+    (15) st -> st DISPLAY SBIZQ MSG SBDER PUNTOCOMA .
+
+    CBDER           reduce using rule 15 (st -> st DISPLAY SBIZQ MSG SBDER PUNTOCOMA .)
+    LET             reduce using rule 15 (st -> st DISPLAY SBIZQ MSG SBDER PUNTOCOMA .)
+    ENTER           reduce using rule 15 (st -> st DISPLAY SBIZQ MSG SBDER PUNTOCOMA .)
+    DISPLAY         reduce using rule 15 (st -> st DISPLAY SBIZQ MSG SBDER PUNTOCOMA .)
+    IF              reduce using rule 15 (st -> st DISPLAY SBIZQ MSG SBDER PUNTOCOMA .)
+    DO              reduce using rule 15 (st -> st DISPLAY SBIZQ MSG SBDER PUNTOCOMA .)
+    BREAK           reduce using rule 15 (st -> st DISPLAY SBIZQ MSG SBDER PUNTOCOMA .)
+    WHILE           reduce using rule 15 (st -> st DISPLAY SBIZQ MSG SBDER PUNTOCOMA .)
+    FOR             reduce using rule 15 (st -> st DISPLAY SBIZQ MSG SBDER PUNTOCOMA .)
+
+
+state 106
+
+    (55) oprel -> PARIZQ oprel PARDER .
+
+    PARDER          reduce using rule 55 (oprel -> PARIZQ oprel PARDER .)
+    AND             reduce using rule 55 (oprel -> PARIZQ oprel PARDER .)
+    OR              reduce using rule 55 (oprel -> PARIZQ oprel PARDER .)
+    PUNTOCOMA       reduce using rule 55 (oprel -> PARIZQ oprel PARDER .)
+
+
+state 107
+
+    (16) st -> st IF PARIZQ cond PARDER ifAux . CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st IF PARIZQ cond PARDER ifAux . CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+
+    CBIZQ           shift and go to state 132
+
+
+state 108
+
+    (47) cond -> cond AND oprel .
+
+    PARDER          reduce using rule 47 (cond -> cond AND oprel .)
+    AND             reduce using rule 47 (cond -> cond AND oprel .)
+    OR              reduce using rule 47 (cond -> cond AND oprel .)
+    PUNTOCOMA       reduce using rule 47 (cond -> cond AND oprel .)
+
+
+state 109
+
+    (48) cond -> cond OR oprel .
+
+    PARDER          reduce using rule 48 (cond -> cond OR oprel .)
+    AND             reduce using rule 48 (cond -> cond OR oprel .)
+    OR              reduce using rule 48 (cond -> cond OR oprel .)
+    PUNTOCOMA       reduce using rule 48 (cond -> cond OR oprel .)
+
+
+state 110
+
+    (49) oprel -> operador IGUALIGUAL operador .
+
+    PARDER          reduce using rule 49 (oprel -> operador IGUALIGUAL operador .)
+    AND             reduce using rule 49 (oprel -> operador IGUALIGUAL operador .)
+    OR              reduce using rule 49 (oprel -> operador IGUALIGUAL operador .)
+    PUNTOCOMA       reduce using rule 49 (oprel -> operador IGUALIGUAL operador .)
+
+
+state 111
+
+    (50) oprel -> operador DIFERENTE operador .
+
+    PARDER          reduce using rule 50 (oprel -> operador DIFERENTE operador .)
+    AND             reduce using rule 50 (oprel -> operador DIFERENTE operador .)
+    OR              reduce using rule 50 (oprel -> operador DIFERENTE operador .)
+    PUNTOCOMA       reduce using rule 50 (oprel -> operador DIFERENTE operador .)
+
+
+state 112
+
+    (51) oprel -> operador MAYOR operador .
+
+    PARDER          reduce using rule 51 (oprel -> operador MAYOR operador .)
+    AND             reduce using rule 51 (oprel -> operador MAYOR operador .)
+    OR              reduce using rule 51 (oprel -> operador MAYOR operador .)
+    PUNTOCOMA       reduce using rule 51 (oprel -> operador MAYOR operador .)
+
+
+state 113
+
+    (52) oprel -> operador MENOR operador .
+
+    PARDER          reduce using rule 52 (oprel -> operador MENOR operador .)
+    AND             reduce using rule 52 (oprel -> operador MENOR operador .)
+    OR              reduce using rule 52 (oprel -> operador MENOR operador .)
+    PUNTOCOMA       reduce using rule 52 (oprel -> operador MENOR operador .)
+
+
+state 114
+
+    (53) oprel -> operador MAYORQUE operador .
+
+    PARDER          reduce using rule 53 (oprel -> operador MAYORQUE operador .)
+    AND             reduce using rule 53 (oprel -> operador MAYORQUE operador .)
+    OR              reduce using rule 53 (oprel -> operador MAYORQUE operador .)
+    PUNTOCOMA       reduce using rule 53 (oprel -> operador MAYORQUE operador .)
+
+
+state 115
+
+    (54) oprel -> operador MENORQUE operador .
+
+    PARDER          reduce using rule 54 (oprel -> operador MENORQUE operador .)
+    AND             reduce using rule 54 (oprel -> operador MENORQUE operador .)
+    OR              reduce using rule 54 (oprel -> operador MENORQUE operador .)
+    PUNTOCOMA       reduce using rule 54 (oprel -> operador MENORQUE operador .)
+
+
+state 116
+
+    (56) oprel -> NOT PARIZQ oprel . PARDER
+
+    PARDER          shift and go to state 133
+
+
+state 117
+
+    (71) operador -> ID SBIZQ ID . SBDER
+    (72) operador -> ID SBIZQ ID . SBDER SBIZQ ID SBDER
+    (73) operador -> ID SBIZQ ID . SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    SBDER           shift and go to state 134
+
+
+state 118
+
+    (68) operador -> ID SBIZQ CTE . SBDER
+    (69) operador -> ID SBIZQ CTE . SBDER SBIZQ CTE SBDER
+    (70) operador -> ID SBIZQ CTE . SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+
+    SBDER           shift and go to state 135
+
+
+state 119
+
+    (18) st -> st auxIniWhile WHILE PARIZQ cond PARDER . auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (30) auxFauxWhile -> .
+
+    CBIZQ           reduce using rule 30 (auxFauxWhile -> .)
+
+    auxFauxWhile                   shift and go to state 136
+
+state 120
+
+    (19) st -> st auxIniFor FOR PARIZQ cond auxFauxFor . PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+
+    PUNTOCOMA       shift and go to state 137
+
+
+state 121
+
+    (20) st -> st DO auxIniLoop CBIZQ st CBDER . PUNTOCOMA auxFinLoop
+
+    PUNTOCOMA       shift and go to state 138
+
+
+state 122
+
+    (5) v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE . SBDER PUNTOCOMA
+    (6) v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE . SBDER SBIZQ CTE SBDER PUNTOCOMA
+
+    SBDER           shift and go to state 139
+
+
+state 123
+
+    (57) e -> e PLUS t .
+    (60) t -> t . MULT m
+    (61) t -> t . DIV m
+
+    PUNTOCOMA       reduce using rule 57 (e -> e PLUS t .)
+    PLUS            reduce using rule 57 (e -> e PLUS t .)
+    MENOS           reduce using rule 57 (e -> e PLUS t .)
+    PARDER          reduce using rule 57 (e -> e PLUS t .)
+    MULT            shift and go to state 99
+    DIV             shift and go to state 100
+
+
+state 124
+
+    (58) e -> e MENOS t .
+    (60) t -> t . MULT m
+    (61) t -> t . DIV m
+
+    PUNTOCOMA       reduce using rule 58 (e -> e MENOS t .)
+    PLUS            reduce using rule 58 (e -> e MENOS t .)
+    MENOS           reduce using rule 58 (e -> e MENOS t .)
+    PARDER          reduce using rule 58 (e -> e MENOS t .)
+    MULT            shift and go to state 99
+    DIV             shift and go to state 100
+
+
+state 125
+
+    (21) st -> st LET variable IGUAL IF PARIZQ cond . PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st LET variable IGUAL IF PARIZQ cond . PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (47) cond -> cond . AND oprel
+    (48) cond -> cond . OR oprel
+
+    PARDER          shift and go to state 140
+    AND             shift and go to state 78
+    OR              shift and go to state 79
+
+
+state 126
+
+    (63) m -> PARIZQ e PARDER .
+
+    MULT            reduce using rule 63 (m -> PARIZQ e PARDER .)
+    DIV             reduce using rule 63 (m -> PARIZQ e PARDER .)
+    PUNTOCOMA       reduce using rule 63 (m -> PARIZQ e PARDER .)
+    PLUS            reduce using rule 63 (m -> PARIZQ e PARDER .)
+    MENOS           reduce using rule 63 (m -> PARIZQ e PARDER .)
+    PARDER          reduce using rule 63 (m -> PARIZQ e PARDER .)
+
+
+state 127
+
+    (60) t -> t MULT m .
+
+    MULT            reduce using rule 60 (t -> t MULT m .)
+    DIV             reduce using rule 60 (t -> t MULT m .)
+    PUNTOCOMA       reduce using rule 60 (t -> t MULT m .)
+    PLUS            reduce using rule 60 (t -> t MULT m .)
+    MENOS           reduce using rule 60 (t -> t MULT m .)
+    PARDER          reduce using rule 60 (t -> t MULT m .)
+
+
+state 128
+
+    (61) t -> t DIV m .
+
+    MULT            reduce using rule 61 (t -> t DIV m .)
+    DIV             reduce using rule 61 (t -> t DIV m .)
+    PUNTOCOMA       reduce using rule 61 (t -> t DIV m .)
+    PLUS            reduce using rule 61 (t -> t DIV m .)
+    MENOS           reduce using rule 61 (t -> t DIV m .)
+    PARDER          reduce using rule 61 (t -> t DIV m .)
+
+
+state 129
+
+    (44) variable -> ID SBIZQ ID SBDER SBIZQ . ID SBDER
+    (45) variable -> ID SBIZQ ID SBDER SBIZQ . ID SBDER SBIZQ ID SBDER
+
+    ID              shift and go to state 141
+
+
+state 130
+
+    (41) variable -> ID SBIZQ CTE SBDER SBIZQ . CTE SBDER
+    (42) variable -> ID SBIZQ CTE SBDER SBIZQ . CTE SBDER SBIZQ CTE SBDER
+
+    CTE             shift and go to state 142
+
+
+state 131
+
+    (14) st -> st DISPLAY SBIZQ MSG COMA variable SBDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 143
+
+
+state 132
+
+    (16) st -> st IF PARIZQ cond PARDER ifAux CBIZQ . st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st IF PARIZQ cond PARDER ifAux CBIZQ . st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (12) st -> . st LET variable IGUAL e PUNTOCOMA
+    (13) st -> . st ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> . st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> . st DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> . st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> . st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> . st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> . st BREAK auxFauxLoop PUNTOCOMA
+    (24) st -> .
+
+    CBDER           reduce using rule 24 (st -> .)
+    LET             reduce using rule 24 (st -> .)
+    ENTER           reduce using rule 24 (st -> .)
+    DISPLAY         reduce using rule 24 (st -> .)
+    IF              reduce using rule 24 (st -> .)
+    DO              reduce using rule 24 (st -> .)
+    BREAK           reduce using rule 24 (st -> .)
+    WHILE           reduce using rule 24 (st -> .)
+    FOR             reduce using rule 24 (st -> .)
+
+    st                             shift and go to state 144
+
+state 133
+
+    (56) oprel -> NOT PARIZQ oprel PARDER .
+
+    PARDER          reduce using rule 56 (oprel -> NOT PARIZQ oprel PARDER .)
+    AND             reduce using rule 56 (oprel -> NOT PARIZQ oprel PARDER .)
+    OR              reduce using rule 56 (oprel -> NOT PARIZQ oprel PARDER .)
+    PUNTOCOMA       reduce using rule 56 (oprel -> NOT PARIZQ oprel PARDER .)
+
+
+state 134
+
+    (71) operador -> ID SBIZQ ID SBDER .
+    (72) operador -> ID SBIZQ ID SBDER . SBIZQ ID SBDER
+    (73) operador -> ID SBIZQ ID SBDER . SBIZQ ID SBDER SBIZQ ID SBDER
+
+    IGUALIGUAL      reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    DIFERENTE       reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    MAYOR           reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    MENOR           reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    MAYORQUE        reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    MENORQUE        reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    MULT            reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    DIV             reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    PUNTOCOMA       reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    PLUS            reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    MENOS           reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    PARDER          reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    AND             reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    OR              reduce using rule 71 (operador -> ID SBIZQ ID SBDER .)
+    SBIZQ           shift and go to state 145
+
+
+state 135
+
+    (68) operador -> ID SBIZQ CTE SBDER .
+    (69) operador -> ID SBIZQ CTE SBDER . SBIZQ CTE SBDER
+    (70) operador -> ID SBIZQ CTE SBDER . SBIZQ CTE SBDER SBIZQ CTE SBDER
+
+    IGUALIGUAL      reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    DIFERENTE       reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    MAYOR           reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    MENOR           reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    MAYORQUE        reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    MENORQUE        reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    MULT            reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    DIV             reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    PUNTOCOMA       reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    PLUS            reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    MENOS           reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    PARDER          reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    AND             reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    OR              reduce using rule 68 (operador -> ID SBIZQ CTE SBDER .)
+    SBIZQ           shift and go to state 146
+
+
+state 136
+
+    (18) st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile . CBIZQ st CBDER PUNTOCOMA auxFinWhile
+
+    CBIZQ           shift and go to state 147
+
+
+state 137
+
+    (19) st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA . e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (57) e -> . e PLUS t
+    (58) e -> . e MENOS t
+    (59) e -> . t
+    (60) t -> . t MULT m
+    (61) t -> . t DIV m
+    (62) t -> . m
+    (63) m -> . PARIZQ e PARDER
+    (64) m -> . operador
+    (65) operador -> . CTE
+    (66) operador -> . FLOAT
+    (67) operador -> . ID
+    (68) operador -> . ID SBIZQ CTE SBDER
+    (69) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (70) operador -> . ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER
+    (71) operador -> . ID SBIZQ ID SBDER
+    (72) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER
+    (73) operador -> . ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER
+
+    PARIZQ          shift and go to state 67
+    CTE             shift and go to state 56
+    FLOAT           shift and go to state 57
+    ID              shift and go to state 58
+
+    e                              shift and go to state 148
+    t                              shift and go to state 68
+    m                              shift and go to state 69
+    operador                       shift and go to state 70
+
+state 138
+
+    (20) st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA . auxFinLoop
+    (38) auxFinLoop -> .
+
+    CBDER           reduce using rule 38 (auxFinLoop -> .)
+    LET             reduce using rule 38 (auxFinLoop -> .)
+    ENTER           reduce using rule 38 (auxFinLoop -> .)
+    DISPLAY         reduce using rule 38 (auxFinLoop -> .)
+    IF              reduce using rule 38 (auxFinLoop -> .)
+    DO              reduce using rule 38 (auxFinLoop -> .)
+    BREAK           reduce using rule 38 (auxFinLoop -> .)
+    WHILE           reduce using rule 38 (auxFinLoop -> .)
+    FOR             reduce using rule 38 (auxFinLoop -> .)
+
+    auxFinLoop                     shift and go to state 149
+
+state 139
+
+    (5) v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER . PUNTOCOMA
+    (6) v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER . SBIZQ CTE SBDER PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 151
+    SBIZQ           shift and go to state 150
+
+
+state 140
+
+    (21) st -> st LET variable IGUAL IF PARIZQ cond PARDER . ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER . ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (25) ifAux -> .
+
+    CBIZQ           reduce using rule 25 (ifAux -> .)
+
+    ifAux                          shift and go to state 152
+
+state 141
+
+    (44) variable -> ID SBIZQ ID SBDER SBIZQ ID . SBDER
+    (45) variable -> ID SBIZQ ID SBDER SBIZQ ID . SBDER SBIZQ ID SBDER
+
+    SBDER           shift and go to state 153
+
+
+state 142
+
+    (41) variable -> ID SBIZQ CTE SBDER SBIZQ CTE . SBDER
+    (42) variable -> ID SBIZQ CTE SBDER SBIZQ CTE . SBDER SBIZQ CTE SBDER
+
+    SBDER           shift and go to state 154
+
+
+state 143
+
+    (14) st -> st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA .
+
+    CBDER           reduce using rule 14 (st -> st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA .)
+    LET             reduce using rule 14 (st -> st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA .)
+    ENTER           reduce using rule 14 (st -> st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA .)
+    DISPLAY         reduce using rule 14 (st -> st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA .)
+    IF              reduce using rule 14 (st -> st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA .)
+    DO              reduce using rule 14 (st -> st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA .)
+    BREAK           reduce using rule 14 (st -> st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA .)
+    WHILE           reduce using rule 14 (st -> st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA .)
+    FOR             reduce using rule 14 (st -> st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA .)
+
+
+state 144
+
+    (16) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st . CBDER PUNTOCOMA ifEndAux
+    (17) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st . CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (12) st -> st . LET variable IGUAL e PUNTOCOMA
+    (13) st -> st . ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> st . DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> st . DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> st . auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> st . auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> st . DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> st . BREAK auxFauxLoop PUNTOCOMA
+    (29) auxIniWhile -> .
+    (32) auxIniFor -> .
+
+    CBDER           shift and go to state 155
+    LET             shift and go to state 22
+    ENTER           shift and go to state 23
+    DISPLAY         shift and go to state 24
+    IF              shift and go to state 25
+    DO              shift and go to state 28
+    BREAK           shift and go to state 29
+    WHILE           reduce using rule 29 (auxIniWhile -> .)
+    FOR             reduce using rule 32 (auxIniFor -> .)
+
+    auxIniWhile                    shift and go to state 26
+    auxIniFor                      shift and go to state 27
+
+state 145
+
+    (72) operador -> ID SBIZQ ID SBDER SBIZQ . ID SBDER
+    (73) operador -> ID SBIZQ ID SBDER SBIZQ . ID SBDER SBIZQ ID SBDER
+
+    ID              shift and go to state 156
+
+
+state 146
+
+    (69) operador -> ID SBIZQ CTE SBDER SBIZQ . CTE SBDER
+    (70) operador -> ID SBIZQ CTE SBDER SBIZQ . CTE SBDER SBIZQ CTE SBDER
+
+    CTE             shift and go to state 157
+
+
+state 147
+
+    (18) st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ . st CBDER PUNTOCOMA auxFinWhile
+    (12) st -> . st LET variable IGUAL e PUNTOCOMA
+    (13) st -> . st ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> . st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> . st DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> . st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> . st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> . st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> . st BREAK auxFauxLoop PUNTOCOMA
+    (24) st -> .
+
+    CBDER           reduce using rule 24 (st -> .)
+    LET             reduce using rule 24 (st -> .)
+    ENTER           reduce using rule 24 (st -> .)
+    DISPLAY         reduce using rule 24 (st -> .)
+    IF              reduce using rule 24 (st -> .)
+    DO              reduce using rule 24 (st -> .)
+    BREAK           reduce using rule 24 (st -> .)
+    WHILE           reduce using rule 24 (st -> .)
+    FOR             reduce using rule 24 (st -> .)
+
+    st                             shift and go to state 158
+
+state 148
+
+    (19) st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e . auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (57) e -> e . PLUS t
+    (58) e -> e . MENOS t
+    (35) auxAssignFor -> .
+
+    PLUS            shift and go to state 95
+    MENOS           shift and go to state 96
+    PARDER          reduce using rule 35 (auxAssignFor -> .)
+
+    auxAssignFor                   shift and go to state 159
+
+state 149
+
+    (20) st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop .
+
+    CBDER           reduce using rule 20 (st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop .)
+    LET             reduce using rule 20 (st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop .)
+    ENTER           reduce using rule 20 (st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop .)
+    DISPLAY         reduce using rule 20 (st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop .)
+    IF              reduce using rule 20 (st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop .)
+    DO              reduce using rule 20 (st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop .)
+    BREAK           reduce using rule 20 (st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop .)
+    WHILE           reduce using rule 20 (st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop .)
+    FOR             reduce using rule 20 (st -> st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop .)
+
+
+state 150
+
+    (6) v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ . CTE SBDER PUNTOCOMA
+
+    CTE             shift and go to state 160
+
+
+state 151
+
+    (5) v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA .
+
+    MAIN            reduce using rule 5 (v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA .)
+    VAR             reduce using rule 5 (v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA .)
+    ARRAY           reduce using rule 5 (v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA .)
+    FUNCT           reduce using rule 5 (v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA .)
+
+
+state 152
+
+    (21) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux . CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux . CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+
+    CBIZQ           shift and go to state 161
+
+
+state 153
+
+    (44) variable -> ID SBIZQ ID SBDER SBIZQ ID SBDER .
+    (45) variable -> ID SBIZQ ID SBDER SBIZQ ID SBDER . SBIZQ ID SBDER
+
+    IGUAL           reduce using rule 44 (variable -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    SBDER           reduce using rule 44 (variable -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    SBIZQ           shift and go to state 162
+
+
+state 154
+
+    (41) variable -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .
+    (42) variable -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER . SBIZQ CTE SBDER
+
+    IGUAL           reduce using rule 41 (variable -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    SBDER           reduce using rule 41 (variable -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    SBIZQ           shift and go to state 163
+
+
+state 155
+
+    (16) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER . PUNTOCOMA ifEndAux
+    (17) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER . PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+
+    PUNTOCOMA       shift and go to state 164
+
+
+state 156
+
+    (72) operador -> ID SBIZQ ID SBDER SBIZQ ID . SBDER
+    (73) operador -> ID SBIZQ ID SBDER SBIZQ ID . SBDER SBIZQ ID SBDER
+
+    SBDER           shift and go to state 165
+
+
+state 157
+
+    (69) operador -> ID SBIZQ CTE SBDER SBIZQ CTE . SBDER
+    (70) operador -> ID SBIZQ CTE SBDER SBIZQ CTE . SBDER SBIZQ CTE SBDER
+
+    SBDER           shift and go to state 166
+
+
+state 158
+
+    (18) st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st . CBDER PUNTOCOMA auxFinWhile
+    (12) st -> st . LET variable IGUAL e PUNTOCOMA
+    (13) st -> st . ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> st . DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> st . DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> st . auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> st . auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> st . DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> st . BREAK auxFauxLoop PUNTOCOMA
+    (29) auxIniWhile -> .
+    (32) auxIniFor -> .
+
+    CBDER           shift and go to state 167
+    LET             shift and go to state 22
+    ENTER           shift and go to state 23
+    DISPLAY         shift and go to state 24
+    IF              shift and go to state 25
+    DO              shift and go to state 28
+    BREAK           shift and go to state 29
+    WHILE           reduce using rule 29 (auxIniWhile -> .)
+    FOR             reduce using rule 32 (auxIniFor -> .)
+
+    auxIniWhile                    shift and go to state 26
+    auxIniFor                      shift and go to state 27
+
+state 159
+
+    (19) st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor . PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+
+    PARDER          shift and go to state 168
+
+
+state 160
+
+    (6) v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE . SBDER PUNTOCOMA
+
+    SBDER           shift and go to state 169
+
+
+state 161
+
+    (21) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ . CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ . CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+
+    CTE             shift and go to state 170
+
+
+state 162
+
+    (45) variable -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ . ID SBDER
+
+    ID              shift and go to state 171
+
+
+state 163
+
+    (42) variable -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ . CTE SBDER
+
+    CTE             shift and go to state 172
+
+
+state 164
+
+    (16) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA . ifEndAux
+    (17) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA . ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (27) ifEndAux -> .
+
+    ELSE            shift and go to state 174
+    CBDER           reduce using rule 27 (ifEndAux -> .)
+    LET             reduce using rule 27 (ifEndAux -> .)
+    ENTER           reduce using rule 27 (ifEndAux -> .)
+    DISPLAY         reduce using rule 27 (ifEndAux -> .)
+    IF              reduce using rule 27 (ifEndAux -> .)
+    DO              reduce using rule 27 (ifEndAux -> .)
+    BREAK           reduce using rule 27 (ifEndAux -> .)
+    WHILE           reduce using rule 27 (ifEndAux -> .)
+    FOR             reduce using rule 27 (ifEndAux -> .)
+
+    ifEndAux                       shift and go to state 173
+
+state 165
+
+    (72) operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .
+    (73) operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER . SBIZQ ID SBDER
+
+    IGUALIGUAL      reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    DIFERENTE       reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MAYOR           reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MENOR           reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MAYORQUE        reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MENORQUE        reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MULT            reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    DIV             reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    PUNTOCOMA       reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    PLUS            reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MENOS           reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    PARDER          reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    AND             reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    OR              reduce using rule 72 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER .)
+    SBIZQ           shift and go to state 175
+
+
+state 166
+
+    (69) operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .
+    (70) operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER . SBIZQ CTE SBDER
+
+    IGUALIGUAL      reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    DIFERENTE       reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MAYOR           reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MENOR           reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MAYORQUE        reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MENORQUE        reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MULT            reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    DIV             reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    PUNTOCOMA       reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    PLUS            reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MENOS           reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    PARDER          reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    AND             reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    OR              reduce using rule 69 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    SBIZQ           shift and go to state 176
+
+
+state 167
+
+    (18) st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER . PUNTOCOMA auxFinWhile
+
+    PUNTOCOMA       shift and go to state 177
+
+
+state 168
+
+    (19) st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER . CBIZQ st CBDER PUNTOCOMA auxFinFor
+
+    CBIZQ           shift and go to state 178
+
+
+state 169
+
+    (6) v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 179
+
+
+state 170
+
+    (21) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE . PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE . CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+
+    PUNTOCOMA       shift and go to state 180
+    CBDER           shift and go to state 181
+
+
+state 171
+
+    (45) variable -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID . SBDER
+
+    SBDER           shift and go to state 182
+
+
+state 172
+
+    (42) variable -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE . SBDER
+
+    SBDER           shift and go to state 183
+
+
+state 173
+
+    (16) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux .
+
+    CBDER           reduce using rule 16 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    LET             reduce using rule 16 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    ENTER           reduce using rule 16 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    DISPLAY         reduce using rule 16 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    IF              reduce using rule 16 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    DO              reduce using rule 16 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    BREAK           reduce using rule 16 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    WHILE           reduce using rule 16 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    FOR             reduce using rule 16 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+
+
+state 174
+
+    (17) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE . ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (26) ifAuxElse -> .
+
+    CBIZQ           reduce using rule 26 (ifAuxElse -> .)
+
+    ifAuxElse                      shift and go to state 184
+
+state 175
+
+    (73) operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ . ID SBDER
+
+    ID              shift and go to state 185
+
+
+state 176
+
+    (70) operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ . CTE SBDER
+
+    CTE             shift and go to state 186
+
+
+state 177
+
+    (18) st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA . auxFinWhile
+    (31) auxFinWhile -> .
+
+    CBDER           reduce using rule 31 (auxFinWhile -> .)
+    LET             reduce using rule 31 (auxFinWhile -> .)
+    ENTER           reduce using rule 31 (auxFinWhile -> .)
+    DISPLAY         reduce using rule 31 (auxFinWhile -> .)
+    IF              reduce using rule 31 (auxFinWhile -> .)
+    DO              reduce using rule 31 (auxFinWhile -> .)
+    BREAK           reduce using rule 31 (auxFinWhile -> .)
+    WHILE           reduce using rule 31 (auxFinWhile -> .)
+    FOR             reduce using rule 31 (auxFinWhile -> .)
+
+    auxFinWhile                    shift and go to state 187
+
+state 178
+
+    (19) st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ . st CBDER PUNTOCOMA auxFinFor
+    (12) st -> . st LET variable IGUAL e PUNTOCOMA
+    (13) st -> . st ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> . st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> . st DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> . st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> . st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> . st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> . st BREAK auxFauxLoop PUNTOCOMA
+    (24) st -> .
+
+    CBDER           reduce using rule 24 (st -> .)
+    LET             reduce using rule 24 (st -> .)
+    ENTER           reduce using rule 24 (st -> .)
+    DISPLAY         reduce using rule 24 (st -> .)
+    IF              reduce using rule 24 (st -> .)
+    DO              reduce using rule 24 (st -> .)
+    BREAK           reduce using rule 24 (st -> .)
+    WHILE           reduce using rule 24 (st -> .)
+    FOR             reduce using rule 24 (st -> .)
+
+    st                             shift and go to state 188
+
+state 179
+
+    (6) v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA .
+
+    MAIN            reduce using rule 6 (v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA .)
+    VAR             reduce using rule 6 (v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA .)
+    ARRAY           reduce using rule 6 (v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA .)
+    FUNCT           reduce using rule 6 (v -> v ARRAY tipo ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER PUNTOCOMA .)
+
+
+state 180
+
+    (21) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA . CBDER PUNTOCOMA ifEndAuxEsp
+
+    CBDER           shift and go to state 189
+
+
+state 181
+
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER . PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+
+    PUNTOCOMA       shift and go to state 190
+
+
+state 182
+
+    (45) variable -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .
+
+    IGUAL           reduce using rule 45 (variable -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    SBDER           reduce using rule 45 (variable -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+
+
+state 183
+
+    (42) variable -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .
+
+    IGUAL           reduce using rule 42 (variable -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    SBDER           reduce using rule 42 (variable -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+
+
+state 184
+
+    (17) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse . CBIZQ st CBDER PUNTOCOMA ifEndAux
+
+    CBIZQ           shift and go to state 191
+
+
+state 185
+
+    (73) operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID . SBDER
+
+    SBDER           shift and go to state 192
+
+
+state 186
+
+    (70) operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE . SBDER
+
+    SBDER           shift and go to state 193
+
+
+state 187
+
+    (18) st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile .
+
+    CBDER           reduce using rule 18 (st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile .)
+    LET             reduce using rule 18 (st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile .)
+    ENTER           reduce using rule 18 (st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile .)
+    DISPLAY         reduce using rule 18 (st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile .)
+    IF              reduce using rule 18 (st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile .)
+    DO              reduce using rule 18 (st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile .)
+    BREAK           reduce using rule 18 (st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile .)
+    WHILE           reduce using rule 18 (st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile .)
+    FOR             reduce using rule 18 (st -> st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile .)
+
+
+state 188
+
+    (19) st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st . CBDER PUNTOCOMA auxFinFor
+    (12) st -> st . LET variable IGUAL e PUNTOCOMA
+    (13) st -> st . ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> st . DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> st . DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> st . auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> st . auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> st . DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> st . BREAK auxFauxLoop PUNTOCOMA
+    (29) auxIniWhile -> .
+    (32) auxIniFor -> .
+
+    CBDER           shift and go to state 194
+    LET             shift and go to state 22
+    ENTER           shift and go to state 23
+    DISPLAY         shift and go to state 24
+    IF              shift and go to state 25
+    DO              shift and go to state 28
+    BREAK           shift and go to state 29
+    WHILE           reduce using rule 29 (auxIniWhile -> .)
+    FOR             reduce using rule 32 (auxIniFor -> .)
+
+    auxIniFor                      shift and go to state 27
+    auxIniWhile                    shift and go to state 26
+
+state 189
+
+    (21) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER . PUNTOCOMA ifEndAuxEsp
+
+    PUNTOCOMA       shift and go to state 195
+
+
+state 190
+
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA . ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+
+    ELSE            shift and go to state 196
+
+
+state 191
+
+    (17) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ . st CBDER PUNTOCOMA ifEndAux
+    (12) st -> . st LET variable IGUAL e PUNTOCOMA
+    (13) st -> . st ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> . st DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> . st DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> . st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> . st auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> . st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> . st DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> . st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> . st BREAK auxFauxLoop PUNTOCOMA
+    (24) st -> .
+
+    CBDER           reduce using rule 24 (st -> .)
+    LET             reduce using rule 24 (st -> .)
+    ENTER           reduce using rule 24 (st -> .)
+    DISPLAY         reduce using rule 24 (st -> .)
+    IF              reduce using rule 24 (st -> .)
+    DO              reduce using rule 24 (st -> .)
+    BREAK           reduce using rule 24 (st -> .)
+    WHILE           reduce using rule 24 (st -> .)
+    FOR             reduce using rule 24 (st -> .)
+
+    st                             shift and go to state 197
+
+state 192
+
+    (73) operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .
+
+    IGUALIGUAL      reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    DIFERENTE       reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MAYOR           reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MENOR           reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MAYORQUE        reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MENORQUE        reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MULT            reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    DIV             reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    PUNTOCOMA       reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    PLUS            reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    MENOS           reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    PARDER          reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    AND             reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+    OR              reduce using rule 73 (operador -> ID SBIZQ ID SBDER SBIZQ ID SBDER SBIZQ ID SBDER .)
+
+
+state 193
+
+    (70) operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .
+
+    IGUALIGUAL      reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    DIFERENTE       reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MAYOR           reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MENOR           reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MAYORQUE        reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MENORQUE        reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MULT            reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    DIV             reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    PUNTOCOMA       reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    PLUS            reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    MENOS           reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    PARDER          reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    AND             reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+    OR              reduce using rule 70 (operador -> ID SBIZQ CTE SBDER SBIZQ CTE SBDER SBIZQ CTE SBDER .)
+
+
+state 194
+
+    (19) st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER . PUNTOCOMA auxFinFor
+
+    PUNTOCOMA       shift and go to state 198
+
+
+state 195
+
+    (21) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA . ifEndAuxEsp
+    (28) ifEndAuxEsp -> .
+
+    CBDER           reduce using rule 28 (ifEndAuxEsp -> .)
+    LET             reduce using rule 28 (ifEndAuxEsp -> .)
+    ENTER           reduce using rule 28 (ifEndAuxEsp -> .)
+    DISPLAY         reduce using rule 28 (ifEndAuxEsp -> .)
+    IF              reduce using rule 28 (ifEndAuxEsp -> .)
+    DO              reduce using rule 28 (ifEndAuxEsp -> .)
+    BREAK           reduce using rule 28 (ifEndAuxEsp -> .)
+    WHILE           reduce using rule 28 (ifEndAuxEsp -> .)
+    FOR             reduce using rule 28 (ifEndAuxEsp -> .)
+
+    ifEndAuxEsp                    shift and go to state 199
+
+state 196
+
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE . ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (26) ifAuxElse -> .
+
+    CBIZQ           reduce using rule 26 (ifAuxElse -> .)
+
+    ifAuxElse                      shift and go to state 200
+
+state 197
+
+    (17) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st . CBDER PUNTOCOMA ifEndAux
+    (12) st -> st . LET variable IGUAL e PUNTOCOMA
+    (13) st -> st . ENTER SBIZQ variable SBDER PUNTOCOMA
+    (14) st -> st . DISPLAY SBIZQ MSG COMA variable SBDER PUNTOCOMA
+    (15) st -> st . DISPLAY SBIZQ MSG SBDER PUNTOCOMA
+    (16) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (17) st -> st . IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux
+    (18) st -> st . auxIniWhile WHILE PARIZQ cond PARDER auxFauxWhile CBIZQ st CBDER PUNTOCOMA auxFinWhile
+    (19) st -> st . auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor
+    (20) st -> st . DO auxIniLoop CBIZQ st CBDER PUNTOCOMA auxFinLoop
+    (21) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp
+    (22) st -> st . LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+    (23) st -> st . BREAK auxFauxLoop PUNTOCOMA
+    (29) auxIniWhile -> .
+    (32) auxIniFor -> .
+
+    CBDER           shift and go to state 201
+    LET             shift and go to state 22
+    ENTER           shift and go to state 23
+    DISPLAY         shift and go to state 24
+    IF              shift and go to state 25
+    DO              shift and go to state 28
+    BREAK           shift and go to state 29
+    WHILE           reduce using rule 29 (auxIniWhile -> .)
+    FOR             reduce using rule 32 (auxIniFor -> .)
+
+    auxIniWhile                    shift and go to state 26
+    auxIniFor                      shift and go to state 27
+
+state 198
+
+    (19) st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA . auxFinFor
+    (34) auxFinFor -> .
+
+    CBDER           reduce using rule 34 (auxFinFor -> .)
+    LET             reduce using rule 34 (auxFinFor -> .)
+    ENTER           reduce using rule 34 (auxFinFor -> .)
+    DISPLAY         reduce using rule 34 (auxFinFor -> .)
+    IF              reduce using rule 34 (auxFinFor -> .)
+    DO              reduce using rule 34 (auxFinFor -> .)
+    BREAK           reduce using rule 34 (auxFinFor -> .)
+    WHILE           reduce using rule 34 (auxFinFor -> .)
+    FOR             reduce using rule 34 (auxFinFor -> .)
+
+    auxFinFor                      shift and go to state 202
+
+state 199
+
+    (21) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp .
+
+    CBDER           reduce using rule 21 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp .)
+    LET             reduce using rule 21 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp .)
+    ENTER           reduce using rule 21 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp .)
+    DISPLAY         reduce using rule 21 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp .)
+    IF              reduce using rule 21 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp .)
+    DO              reduce using rule 21 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp .)
+    BREAK           reduce using rule 21 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp .)
+    WHILE           reduce using rule 21 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp .)
+    FOR             reduce using rule 21 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE PUNTOCOMA CBDER PUNTOCOMA ifEndAuxEsp .)
+
+
+state 200
+
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse . CBIZQ CTE CBDER PUNTOCOMA ifEndAux
+
+    CBIZQ           shift and go to state 203
+
+
+state 201
+
+    (17) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER . PUNTOCOMA ifEndAux
+
+    PUNTOCOMA       shift and go to state 204
+
+
+state 202
+
+    (19) st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor .
+
+    CBDER           reduce using rule 19 (st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor .)
+    LET             reduce using rule 19 (st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor .)
+    ENTER           reduce using rule 19 (st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor .)
+    DISPLAY         reduce using rule 19 (st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor .)
+    IF              reduce using rule 19 (st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor .)
+    DO              reduce using rule 19 (st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor .)
+    BREAK           reduce using rule 19 (st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor .)
+    WHILE           reduce using rule 19 (st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor .)
+    FOR             reduce using rule 19 (st -> st auxIniFor FOR PARIZQ cond auxFauxFor PUNTOCOMA e auxAssignFor PARDER CBIZQ st CBDER PUNTOCOMA auxFinFor .)
+
+
+state 203
+
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ . CTE CBDER PUNTOCOMA ifEndAux
+
+    CTE             shift and go to state 205
+
+
+state 204
+
+    (17) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA . ifEndAux
+    (27) ifEndAux -> .
+
+    CBDER           reduce using rule 27 (ifEndAux -> .)
+    LET             reduce using rule 27 (ifEndAux -> .)
+    ENTER           reduce using rule 27 (ifEndAux -> .)
+    DISPLAY         reduce using rule 27 (ifEndAux -> .)
+    IF              reduce using rule 27 (ifEndAux -> .)
+    DO              reduce using rule 27 (ifEndAux -> .)
+    BREAK           reduce using rule 27 (ifEndAux -> .)
+    WHILE           reduce using rule 27 (ifEndAux -> .)
+    FOR             reduce using rule 27 (ifEndAux -> .)
+
+    ifEndAux                       shift and go to state 206
+
+state 205
+
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE . CBDER PUNTOCOMA ifEndAux
+
+    CBDER           shift and go to state 207
+
+
+state 206
+
+    (17) st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux .
+
+    CBDER           reduce using rule 17 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    LET             reduce using rule 17 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    ENTER           reduce using rule 17 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    DISPLAY         reduce using rule 17 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    IF              reduce using rule 17 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    DO              reduce using rule 17 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    BREAK           reduce using rule 17 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    WHILE           reduce using rule 17 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+    FOR             reduce using rule 17 (st -> st IF PARIZQ cond PARDER ifAux CBIZQ st CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ st CBDER PUNTOCOMA ifEndAux .)
+
+
+state 207
+
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER . PUNTOCOMA ifEndAux
+
+    PUNTOCOMA       shift and go to state 208
+
+
+state 208
+
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA . ifEndAux
+    (27) ifEndAux -> .
+
+    CBDER           reduce using rule 27 (ifEndAux -> .)
+    LET             reduce using rule 27 (ifEndAux -> .)
+    ENTER           reduce using rule 27 (ifEndAux -> .)
+    DISPLAY         reduce using rule 27 (ifEndAux -> .)
+    IF              reduce using rule 27 (ifEndAux -> .)
+    DO              reduce using rule 27 (ifEndAux -> .)
+    BREAK           reduce using rule 27 (ifEndAux -> .)
+    WHILE           reduce using rule 27 (ifEndAux -> .)
+    FOR             reduce using rule 27 (ifEndAux -> .)
+
+    ifEndAux                       shift and go to state 209
+
+state 209
+
+    (22) st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux .
+
+    CBDER           reduce using rule 22 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux .)
+    LET             reduce using rule 22 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux .)
+    ENTER           reduce using rule 22 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux .)
+    DISPLAY         reduce using rule 22 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux .)
+    IF              reduce using rule 22 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux .)
+    DO              reduce using rule 22 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux .)
+    BREAK           reduce using rule 22 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux .)
+    WHILE           reduce using rule 22 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux .)
+    FOR             reduce using rule 22 (st -> st LET variable IGUAL IF PARIZQ cond PARDER ifAux CBIZQ CTE CBDER PUNTOCOMA ELSE ifAuxElse CBIZQ CTE CBDER PUNTOCOMA ifEndAux .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for MAIN in state 2 resolved as shift

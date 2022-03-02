@@ -1,0 +1,41 @@
+var int a;
+var int b;
+var int c;
+var int d;
+var int e;
+var int g;
+var int h;
+var int f;
+
+main
+{
+let a = 2;
+let b = 3;
+let c = 1;
+let d = 4;
+let e = 5;
+
+if (a>b)
+{
+    if (b<c)
+    {
+        let a = b;
+    };
+    else
+    {
+        let b = c+d;
+    };
+};
+else
+{
+    if (d>e)
+    {
+        let d =f;
+    };
+    else
+    {
+        let d = e;
+    };
+};
+
+};

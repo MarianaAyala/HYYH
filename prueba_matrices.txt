@@ -1,0 +1,58 @@
+var int aux_input;
+var int aux;
+var int aux_index_filas;
+var int aux_index_col;
+var int aux_index_prof;
+var int a;
+var int j;
+var int i;
+array int hola[3][2][4];
+
+
+main
+{
+    for (a<3; a+1)
+    {
+        let aux_index_filas = a-1;
+        let j = 0;
+        for(j<2; j+1)
+        {
+          let i = 0;
+          let aux_index_col = j-1;
+            for (i<4; i+1)
+            {
+                let aux_index_prof = i-1;
+                #display["Fila: ", aux_index_filas];
+                #display["Columna: ", aux_index_col];
+                #display["Profundidad: ", aux_index_prof];
+                enter [aux_input];
+                let hola[aux_index_filas][aux_index_col][aux_index_prof] = aux_input;
+            };
+        };
+    };
+
+    let a = 0;
+    display [" "];
+
+     for (a<3; a+1)
+    {
+        let aux_index_filas = a-1;
+        let j = 0;
+        for(j<2; j+1)
+        {
+          let i = 0;
+          let aux_index_col = j-1;
+            for (i<4; i+1)
+            {
+                let aux_index_prof = i-1;
+                display["Fila: ", aux_index_filas];
+                display["Columna: ", aux_index_col];
+                display["Profundidad: ", aux_index_prof];
+                let aux = hola[aux_index_filas][aux_index_col][aux_index_prof];
+                display ["Valor array: ", aux];
+                display [" "];
+            };
+        };
+    };
+
+};
